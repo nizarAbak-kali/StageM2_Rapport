@@ -1,0 +1,51 @@
+=================================
++ Introduction :
+     -> Pourquoi ce stage, où il s'est déroulé ....
+
++ Présentation  de l'entreprise :
+     - Smile :
+         -> c'est quoi
+         -> ça fait quoi
+         -> des chiffres
+     - Smile ECS :
+         -> histoire post smile
+         -> pareille que pour smile
+
++ Présentation du sujet
+      - Présentation de la SisellBox
+         -> ça fait quoi
+         -> pour qui
+         -> Architecture du projet (Schéma + commentaire)
+             - Sbox streamer
+             - Sbox recorder
+      - Problématique posé
+         -> Transmission de flux vidéo + métadonnée au travers du 
+protocole MPEG-TS qui est standard
+         -> intérêt par rapport à l'existant
+
++ Environnement de travail :
+     ->  Présentations de l'environnement technique dans lequel je suis 
+et différentes libs et outils qui composent le projet
+     - Gstreamer
+         -> librairie pour le traitement et la transmission de flux 
+multimédia
+     - OpenCV
+         -> librairie de traitement d'image
+     - Protobuf/Grpc
+         -> protocole de transmission de message sérialisé
+
++ Travail effectué :
+     - Etude de MPEG-TS:
+         -> Pourquoi ?
+         -> qu'est ce que c'est
+         -> modification des plugins pour le mux/demux
+      - Projet SisselBox
+         -> Mis à jour du système de provisionnement
+         -> Etude de l'existant
+             - Sisell elements
+             - sboxstreamer
+         -> Création d'un application Test : MPEGTS[video+metadata]
+
++ Conclusion
+     - pas encore d'idée
+=================================
