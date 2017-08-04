@@ -26,6 +26,11 @@ BBL= $(SRC:.tex=.bbl)
 BLG= $(SRC:.tex=.blg)
 TOC= $(SRC:.tex=.toc)
 OUT= $(SRC:.tex=.out)
+FLS= $(SRC:.tex=.fls)
+FDB= $(SRC:.tex=.fdb_latexmk)
+LOF= $(SRC:.tex=.out)
+
+
 
 #images generes
 PNGS2EPSS=$(subst $(IMGSDIR), $(EPSSDIR), $(PNGS:.png=.eps))
