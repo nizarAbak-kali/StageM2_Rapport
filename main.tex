@@ -1,31 +1,43 @@
 \documentclass[a4paper,12pt,final]{article}
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage[francais]{babel}
-\usepackage{microtype}
-\usepackage[pdftex]{graphicx}
-\usepackage{caption}
-\usepackage[toc,page]{appendix}
-\usepackage{setspace}
-\usepackage{hyperref}
-\usepackage[final]{pdfpages}
-\usepackage{amssymb,amsmath,amsthm,amsfonts}
-\usepackage{calc}
-\usepackage{graphicx}
-\usepackage{subfigure}
-\usepackage{gensymb}
-\usepackage{natbib}
-\usepackage{url}
-\usepackage{graphicx}
-\graphicspath{{figures/}}
-\usepackage{parskip}
+\usepackage{natbib}         % Pour la bibliographie
+\usepackage{url}            % Pour citer les adresses web
+\usepackage[T1]{fontenc}    % Encodage des accents
+\usepackage[utf8]{inputenc} % Lui aussi
+\usepackage[french]{babel} % Pour la traduction française
+\usepackage{numprint}       % Histoire que les chiffres soient bien
 \usepackage{fancyhdr}
-\usepackage{verbatim}
+
+\usepackage{amsmath}        % La base pour les maths
+\usepackage{mathrsfs}       % Quelques symboles supplémentaires
+\usepackage{amssymb}        % encore des symboles.
+\usepackage{amsfonts}       % Des fontes, eg pour \mathbb.
+\usepackage{setspace}
+\usepackage[svgnames]{xcolor} % De la couleur
+\usepackage{geometry}       % Gérer correctement la taille
+
+%%% Si jamais vous voulez changer de police: décommentez les trois
+%\usepackage{tgpagella}
+%\usepackage{tgadventor}
+%\usepackage{inconsolata}
 
 
+\usepackage{graphicx} % inclusion des graphiques
+\usepackage{wrapfig}  % Dessins dans le texte.
 
-\usepackage{vmargin}
-\setmarginsrb{3 cm}{2.5 cm}{3 cm}{2.5 cm}{1 cm}{1.5 cm}{1 cm}{1.5 cm}
+\usepackage{tikz}     % Un package pour les dessins (utilisé pour l'environnement {code})
+\usepackage[framemethod=TikZ]{mdframed}
+% Un environnement pour bien présenter le code informatique
+\newenvironment{code}{%
+\begin{mdframed}[linecolor=Green,innerrightmargin=30pt,innerleftmargin=30pt,
+backgroundcolor=Black!5,
+skipabove=10pt,skipbelow=10pt,roundcorner=5pt,
+splitbottomskip=6pt,splittopskip=12pt]
+}{%
+\end{mdframed}
+}
+
+%\setmarginsrb{3 cm}{2.5 cm}{3 cm}{2.5 cm}{1 cm}{1.5 cm}{1 cm}{1.5 cm}
+\graphicspath{{figures/}}
 
 \title{Rapport de Stage Master 2}
 \author{ABAK-KALI Nizar}
@@ -53,10 +65,10 @@
 \rfoot{
   \includegraphics [width=30mm]{figures/logo_Smile.png}
 }
-\renewcommand{\footrulewidth}{1pt}
+%\renewcommand{\footrulewidth}{1pt}
+
+
 \begin{document}
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \include{content/title}
