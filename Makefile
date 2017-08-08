@@ -93,10 +93,10 @@ dir :
 #Pour clean, on supprime tous les fichiers generes sauf le pdf
 .PHONY:clean
 clean:
-	$(RM) \#* *~ $(DVI) $(PS) $(AUX) $(LOG) $(BBL) $(BLG) $(OUT) $(TOC)
+	$(RM) -rf \#* *~ $(DVI) $(PS) $(AUX) $(LOG) $(BBL) $(BLG) $(OUT) $(TOC)
 	$(RM) $(PNGS2EPSS) $(JPGS2EPSS) $(SVGS2EPSS) $(FIGS2EPSS)
 
 #Pour very-clean, on supprime tous les fichiers generes
 .PHONY:very-clean
 very-clean : clean
-	$(RM) $(PDF)
+	$(RM) -rf $(PDF) $(FLS) $(PDB) $(LOF)
