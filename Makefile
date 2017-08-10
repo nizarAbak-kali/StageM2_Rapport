@@ -26,9 +26,9 @@ BBL= $(SRC:.tex=.bbl)
 BLG= $(SRC:.tex=.blg)
 TOC= $(SRC:.tex=.toc)
 OUT= $(SRC:.tex=.out)
-FLS= $(SRC:.tex=.fls)
-FDB= $(SRC:.tex=.fdb_latexmk)
-LOF= $(SRC:.tex=.out)
+FLS= *.fls
+FDB= *.fdb_latexmk
+LOF= *.lof
 
 
 
@@ -39,7 +39,7 @@ SVGS2EPSS=$(subst $(FIGSDIR), $(EPSSDIR), $(SVGS:.svg=.eps))
 FIGS2EPSS=$(subst $(FIGSDIR), $(EPSSDIR), $(FIGS:.fig=.eps))
 IMAGES=$(PNGS2EPSS) $(JPGS2EPSS) $(SVGS2EPSS) $(FIGS2EPSS)
 #commandes
-RM = rm -f
+RM = rm -rf
 PS2PDF = ps2pdf
 DVIPS = dvips -o
 LATEX = pdflatex
