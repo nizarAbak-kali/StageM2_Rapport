@@ -1,17 +1,8 @@
-\section{Résumé du stage}
+\chapter*{Résumé du stage}
 
-Ce stage s'est déroulé dans la jeune startup NEO-ROBTIX, société dont le projet est d'utiliser des drones lors d'inspection d'ouvrages (bâtiments, ponts, rails, routes...), sous la direction du CTO M. Benoit COURTY. 
-Au cours de ce stage, j'ai eu l'opportunité de travailler sur une grandes variétés de projets et d'avoir la chance de pouvoir tester sur le terrain le résultat de mes efforts, et ainsi engranger un maximum de connaissances et d'expériences que je compte utiliser plus tard.
+Ce stage s'est déroulé dans la société de service Smile et plus particulièrement le département Smile ECS, responsable de l'offre embarqué et IoT\footnote{IoT: Internet of Things ou objets connectés}. Ainsi, mon stage s'est d'abord déroulé sous la tutelle de Pierre Lamot, expert en traitement d'images et streaming chez Smile ECS, puis sous celle de Fabien Dutuit, expert traitement de signal.
+\\
+Au cours de ce stage, j'ai eu l'opportunité de travailler sur une grandes variétés de technologie et ainsi d'avoir la chance de pouvoir engranger un maximum de connaissances et d'expériences dans le monde de l'embarqué que je compte utiliser plus tard.
 \newline
 \newline
-Ce stage ce découpe en trois grandes partie. Une première concentré sur la navigation du drone ainsi que le développement des outils nécessaire à l'inspection d'ouvrages. Puis dans un second temps, une partie apprentissage où nous devait reconnaître automatiquement les fissures dans une route. Enfin une partie traitement d'image où nous devions répondre à plusieurs problématique tel que: la détection et le suivie de route par le drone, l'implémentation d'algorithme pour de l'image stitching\footnote{L'assemblage de photos est un procédé consistant à combiner plusieurs images numériques se recouvrant, dans le but de produire un panorama ou une image de haute définition.}, finalement la détection d'obstacle .
-\newline
-\newline
-Ma première tâche fut sous la tutelle de Benoit Courty, le responsable technique de NEO-ROBTIX, de trouver, puis d'implémenter une solution ROS\footnote{Robot Operating System: est un ensemble d'outils informatiques open source permettant de développer des logiciels pour la robotique} de navigation d'un drone près du mur .
-\\
-\\
-Dans un second temps, nous avons tenté de répondre à la problématique de reconnaissance automatique de faille dans la route grâce au deep learning\footnote{L'apprentissage profond (en anglais deep learning) est un ensemble de méthodes d'apprentissage automatique tentant de modéliser avec un haut niveau d’abstraction des données grâce à des architectures articulées de différentes transformations non linéaires}. Pour ce faire nous nous sommes appuyé sur le papier d'une étudiante suédoise qui a utilisé les technologies Caffe\footnote{Caffe est un framework de deep learning développé par le Berkeley Vision and Learning Center} et DIGITS\footnote{Digits est un système développé par Nvidia pour gérer les réseaux de deep learning depuis une interface web}
-\\
-\\
-Dans la dernière partie de mon stage, j'ai eu pour mission de développer une solution de détection de route puis de suivie de celle-ci en temps réel.
-
+Ce stage ce découpe en deux phases. Une première concentré sur l'étude du protocole MPEG-TS ainsi que de son implémentation dans Gstreamer\footnote{\ref{gstreamer}} puis de l'écriture d'un patch décri plus tard dans le rapport, permettant le multipléxage de données non typé dans un flux vidéo. Puis dans un second temps, mon stage c'est plus concentré sur le projet SisselBox\footnote{\ref{sisselbox}}, où je devais dans un premier temps mettre à jour le système de provisionnement, puis implémenter une application afin de tester mon patch.
