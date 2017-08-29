@@ -1,8 +1,100 @@
 \chapter{Présentation de l'environnement de travail}
 Dans le cadre de se stage j'ai eu l'occasion de travailler une plusieurs technologie, beaucoup d'entre-elles m'était inconnue. Ainsi , je vais explicité les différentes technologie sur lesquelles j'ai travailler.
 \section{Configuration}
+Ubuntu 16.04, python v2, Vala v 0.3,
+
 \section{Gstreamer}
 \label{gstreamer}
+
+
+
+GStreamer est un framework multimédia sous licence libre publié pour la première fois le 31 octobre 1999. Il est écrit en C est initialement pensé pour être un solution concurrente à QuickTime et Direct Show sur GNU/Linux. Aujourd'hui, GStreamer est disponible pour de nombreux systèmes d'exploitations (GNU/Linux, Solaris, BSD, Android, OS X, iOS, Windows, OS/400). De plus, des bindings existent pour utiliser GStreamer dans une multitude de langages de programmation en plus du C (C++, Java, Python, Vala etc..)
+\begin{figure}[!h]
+  \centering
+  \includegraphics[scale=0.7]{figures/gstreamer-overview}
+  \caption{schéma de l'architecture de Gstreamer}
+\end{figure}
+
+
+
+\subsection{Principes techniques}
+GStreamer est basé sur un système de pipeline. Différents éléments sont connectés entre eux par des tuyaux (pipe). Chaque élément possède des « pad » servant à les connecter aux autres. Ces pads peuvent être soit des entrées (sink) soit des sorties (source).
+Exemple de pipeline GStreamer :
+Cette pipeline lit un fichier *.ogg, en sépare les pistes et décode sa piste audio et la décode pour ensuite la jouer.
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[scale=0.5]{figures/pipeline_ogg}
+  \caption{Une pipeline gstreamer pour lire un fichier .ogg puis decode en vorbis}
+\end{figure}
+
+Une autre notion importante de GStreamer est celle de « capabilities » (capacités) ou «caps». Il s'agit d'une liste de formats et propriétés d’un flux qu'un élément peut accepter sur un pad. Par exemple, un élément acceptant uniquement un format vidéo/x-raw au framerate 24/1 (24 images par secondes) ne pourra pas recevoir d'autre flux (format ou framerate différent). Ainsi les caps peuvent imposer un format, une résolution, un framerate, etc. Ce sont eux qui sont utilisés par GStreamer pour négocier la connexion entre deux éléments et choisir le type de flux qui sera utilisé (si les caps sont compatibles pour au moins un type de flux, sinon la négociation échoue).
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[scale=0.9]{figures/caps_negociation}
+  \caption{pipeline avec négociation de caps}
+\end{figure}
+
+\subsection{Présentation des composants Gstreamer}
+Le framework Gstreamer offre plusieurs types d'éléments, ou "plugins", afin d'effectuer des taches différentes. Gstreamer fourni plus de 200 plugins différent. Ainsi ils permettent :
+\begin{itemize}[label=$\bullet$]
+ \item la manipulation d’objet multimédia
+ \item gestions des entrées audio/vidéo (caméra/flux réseau)
+ \item gestion des protocoles réseaux
+ \item gestion des filtres
+ \item gestion des sorties
+\end{itemize}
+
+Lors de ce stage, j'ai particulierement travailler avec deux types d'élément, les multipléxeurs (ou "muxers") et les démultipléxeurs (ou " demuxers"). Les muxers sont de élement "N-to-1" qui prennent N flux en entrée puis les "entrelace" en un seul. Particulierement utiles lorsque l'on voudra muxer le flux vidéo avec la métadonnée.
+Les démuxers font l'exact inverse, ainsi, ils prennent un flux "entrelacé" puis en fourni N.
+
+
+
+\subsubsection{3.2.1.2 Débogage}
+GStreamer possède des outils de débogage très utiles qui m'ont servis tout au long du stage. Le premier est GST\_DEBUG. Il s'agit d'une variable d’environnement qui peut être initialisé avec une valeur de 1 à 9 permettant d'afficher plus ou moins d'informations sur le déroulement des actions initiées par GStreamer.
+L'autre outils est un générateur de fichier *.dot permettant de générer une représentation graphique de la pipeline. Cela permet de vérifier que la pipeline obtenue par le programme est bien celle souhaitée lors de la conception et permet repérer simplement et rapidement certaines erreurs
+
+
 \section{OpenCV}
+Le projet contient des briques algorithmiques fonctionnant grâce à la bibliothèque OpenCV. OpenCV (pour Open Computer Vision) est une bibliothèque graphique libre, initialement développée par Intel, spécialisée dans le traitement d'images en temps réel. La société de robotique Willow Garage et la société ItSeez se sont succédé au support de cette bibliothèque, Depuis 2016 et le rachat de ItSeez par Intel, le support est de nouveau assuré par Intel.
+
+
 \section{Protobuf et Grpc}
+
+\subsection{Protobuf}
+Protobuf ou "Protocol Buffers" sont un mécanisme flexible, efficace et automatisé pour sérialiser des données structurées - pensez XML, mais plus petit, plus rapide et plus simple. Vous définissez comment vous souhaitez que vos données soient structurées une fois, vous pouvez utiliser un code source généré spécialement pour écrire et lire facilement vos données structurées vers et à partir d'une variété de flux de données et en utilisant diverses langues. Vous pouvez même mettre à jour votre structure de données sans rompre les programmes déployés qui sont compilés par rapport au format.
+
+\begin{lstlisting}[language=protobuf2,style=protobuf , frame=single,caption=modèle pour la structure d'un message,label=proto1]
+
+ message Person {
+  required string name = 1;
+  required int32 id = 2;
+  optional string email = 3;
+
+  enum PhoneType {
+    MOBILE = 0;
+    HOME = 1;
+    WORK = 2;
+  }
+
+  message PhoneNumber {
+    required string number = 1;
+    optional PhoneType type = 2 [default = HOME];
+  }
+
+  repeated PhoneNumber phone = 4;
+}
+
+\end{lstlisting}
+C'est à l'aide de cet technologie que nous formattons les métadonnées générer par les algorithmes de traitement d'images afin de les "muxer" avec le flux vidéo.
+
+
 \section{Outils de provisionnement}
+
+\subsection{Vagrant}
+Vagrant est un outil de création et de gestion d'environnements de machines virtuelles.
+Grâce à un flux de travail facile à utiliser et à l'automatisation, lVagrant réduit le temps d'installation de l'environnement de développement, augmente la parité de production .
+\subsection{Ansible}
+
+
