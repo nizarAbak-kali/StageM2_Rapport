@@ -1,20 +1,14 @@
 \chapter{Présentation de l'environnement de travail}
 Dans le cadre de se stage j'ai eu l'occasion de travailler une plusieurs technologie, beaucoup d'entre-elles m'était inconnue. Ainsi , je vais explicité les différentes technologie sur lesquelles j'ai travailler.
-\section{Configuration}
-Ubuntu 16.04, python v2, Vala v 0.3,
 
 \section{Gstreamer}
 \label{gstreamer}
-
-
-
 GStreamer est un framework multimédia sous licence libre publié pour la première fois le 31 octobre 1999. Il est écrit en C est initialement pensé pour être un solution concurrente à QuickTime et Direct Show sur GNU/Linux. Aujourd'hui, GStreamer est disponible pour de nombreux systèmes d'exploitations (GNU/Linux, Solaris, BSD, Android, OS X, iOS, Windows, OS/400). De plus, des bindings existent pour utiliser GStreamer dans une multitude de langages de programmation en plus du C (C++, Java, Python, Vala etc..)
 \begin{figure}[!h]
   \centering
   \includegraphics[scale=0.7]{figures/gstreamer-overview}
   \caption{schéma de l'architecture de Gstreamer}
 \end{figure}
-
 
 
 \subsection{Principes techniques}
@@ -60,9 +54,7 @@ L'autre outils est un générateur de fichier *.dot permettant de générer une 
 Le projet contient des briques algorithmiques fonctionnant grâce à la bibliothèque OpenCV. OpenCV (pour Open Computer Vision) est une bibliothèque graphique libre, initialement développée par Intel, spécialisée dans le traitement d'images en temps réel. La société de robotique Willow Garage et la société ItSeez se sont succédé au support de cette bibliothèque, Depuis 2016 et le rachat de ItSeez par Intel, le support est de nouveau assuré par Intel.
 
 
-\section{Protobuf et Grpc}
-
-\subsection{Protobuf}
+\section{Protobuf }
 Protobuf ou "Protocol Buffers" sont un mécanisme flexible, efficace et automatisé pour sérialiser des données structurées - pensez XML, mais plus petit, plus rapide et plus simple. Vous définissez comment vous souhaitez que vos données soient structurées une fois, vous pouvez utiliser un code source généré spécialement pour écrire et lire facilement vos données structurées vers et à partir d'une variété de flux de données et en utilisant diverses langues. Vous pouvez même mettre à jour votre structure de données sans rompre les programmes déployés qui sont compilés par rapport au format.
 
 \begin{lstlisting}[language=protobuf2,style=protobuf , frame=single,caption=modèle pour la structure d'un message,label=proto1]
@@ -85,16 +77,20 @@ Protobuf ou "Protocol Buffers" sont un mécanisme flexible, efficace et automati
 
   repeated PhoneNumber phone = 4;
 }
-
 \end{lstlisting}
-C'est à l'aide de cet technologie que nous formattons les métadonnées générer par les algorithmes de traitement d'images afin de les "muxer" avec le flux vidéo.
 
+C'est à l'aide de cet technologie que nous formattons les métadonnées générer par les algorithmes de traitement d'images afin de les "muxer" avec le flux vidéo.
 
 \section{Outils de provisionnement}
 
 \subsection{Vagrant}
-Vagrant est un outil de création et de gestion d'environnements de machines virtuelles.
-Grâce à un flux de travail facile à utiliser et à l'automatisation, lVagrant réduit le temps d'installation de l'environnement de développement, augmente la parité de production .
+Vagrant est un outil de création et de gestion d'environnements de machines virtuelles. Il est un outil qui permet de démarrer des machines virtuelles avec une configuration donnée. Un très bon moyen de mettre au point et de diffuser des environnements de travail, et ce, de manière reproductible. Vagrant permet donc d'éviter le syndrome « works on my machine ».
+Plusieurs cas d'usages sont possibles. Le plus courant est celui de faire démarrer un développeur "from scratch" (à partir de zéros). Ensuite, à partir d'un VagrantFile\footnote{fichier de configuration de vagrant.} , il suffit de saisir vagrant up et on dispose d'un environnement de développement.
+
 \subsection{Ansible}
+Écrit en Python, Ansible est un outil Open Source qui permet l’automatisation de tâches. Grâce à lui, nous gérons vos configurations de VM plus facilement, et de façon automatique grâce à l’exécution de tâches sur des groupes d’hôtes.
+Il n’utilise pas de client, d’agent, sur les hôtes clients mais nécessite uniquement une partie serveur Ansible, forcément sous Linux.
+Par ailleurs, Ansible peut éventuellement être utilisé à des fins de contrôle, par exemple pour s’assurer que certains services soient exécutés sur un groupe de machine.
+Sachant qu’il est possible de développer ses propres tâches grâce aux langages YAML, vous pourrez dompter vos serveurs comme bon vous semble avec Ansible !
 
 
