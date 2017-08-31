@@ -1,9 +1,9 @@
 \chapter{Présentation de l'environnement de travail}
-Dans le cadre de se stage j'ai eu l'occasion de travailler une plusieurs technologie, beaucoup d'entre-elles m'était inconnue. Ainsi , je vais explicité les différentes technologie sur lesquelles j'ai travailler.
+Dans le cadre de ce stage j'ai eu l'occasion de travailler une plusieurs technologie, beaucoup d'entre elles m'était inconnue. Ainsi, je vais expliciter les différentes technologies sur lesquelles j'ai travaillé.
 
 \section{Gstreamer}
 \label{gstreamer}
-GStreamer est un framework multimédia sous licence libre publié pour la première fois le 31 octobre 1999. Il est écrit en C est initialement pensé pour être un solution concurrente à QuickTime et Direct Show sur GNU/Linux. Aujourd'hui, GStreamer est disponible pour de nombreux systèmes d'exploitations (GNU/Linux, Solaris, BSD, Android, OS X, iOS, Windows, OS/400). De plus, des bindings existent pour utiliser GStreamer dans une multitude de langages de programmation en plus du C (C++, Java, Python, Vala etc..)
+GStreamer est un framework multimédia sous licence libre publié pour la première fois le 31 octobre 1999. Il est écrit en C et est initialement pensé pour être une solution concurrente à Quicktime et Direct Show sur GNU/Linux. Aujourd'hui, GStreamer est disponible pour de nombreux systèmes d'exploitation (GNU/Linux, Solaris, BSD, Android, OS X, ios, Windows, OS/400). De plus, des bindings existent pour utiliser GStreamer dans une multitude de langages de programmation en plus du C (C++, Java, Python, Vala etc.
 \begin{figure}[!h]
   \centering
   \includegraphics[scale=0.7]{figures/gstreamer-overview}
@@ -13,17 +13,14 @@ GStreamer est un framework multimédia sous licence libre publié pour la premi�
 
 \subsection{Principes techniques}
 \label{principe_gst}
-GStreamer est basé sur un système de pipeline. Différents éléments sont connectés entre eux par des tuyaux (pipe). Chaque élément possède des "pads" servant à les connecter aux autres. Ces pads peuvent être soit des entrées (sink) soit des sorties (source).
-Exemple de pipeline GStreamer :
-Cette pipeline lit un fichier *.ogg, en sépare les pistes et décode sa piste audio et la décode pour ensuite la jouer.
-
+GStreamer est basé sur un système de pipeline. Différents éléments sont connectés entre eux par des tuyaux (pipe). Chaque élément possède des "pads" servant à les connecter aux autres. Ces pads peuvent être soit des entrées (sink) soit des sorties (source).Exemple de pipeline GStreamer :ce pipeline lit un fichier *. Ogg, en sépare les pistes et décode sa piste audio et la décode pour ensuite la jouer.
 \begin{figure}[!h]
   \centering
   \includegraphics[scale=0.5]{figures/pipeline_ogg}
   \caption{Une pipeline gstreamer pour lire un fichier .ogg puis decode en vorbis}
 \end{figure}
 
-Une autre notion importante de GStreamer est celle de « capabilities » (capacités) ou «caps». Il s'agit d'une liste de formats et propriétés d’un flux qu'un élément peut accepter sur un pad. Par exemple, un élément acceptant uniquement un format vidéo/x-raw au framerate 24/1 (24 images par secondes) ne pourra pas recevoir d'autre flux (format ou framerate différent). Ainsi les caps peuvent imposer un format, une résolution, un framerate, etc. Ce sont eux qui sont utilisés par GStreamer pour négocier la connexion entre deux éléments et choisir le type de flux qui sera utilisé (si les caps sont compatibles pour au moins un type de flux, sinon la négociation échoue).
+Une autre notion importante de GStreamer est celle de « capabilities » (capacités) ou «caps». Il s'agit d'une liste de formats et propriétés d’un flux qu'un élément peut accepter sur un pad. Par exemple, un élément acceptant uniquement un format vidéo/x-raw au framerate 24/1 (24 images par seconde) ne pourra pas recevoir d'autre flux (format ou framerate différent). Ainsi les caps peuvent imposer un format, une résolution, un framerate, etc. Ce sont eux qui sont utilisés par GStreamer pour négocier la connexion entre deux éléments et choisir le type de flux qui sera utilisé (si les caps sont compatibles pour au moins un type de flux, sinon la négociation échoue).
 
 \begin{figure}[!h]
   \centering
@@ -32,8 +29,7 @@ Une autre notion importante de GStreamer est celle de « capabilities » (capa
 \end{figure}
 
 \subsection{Présentation des composants Gstreamer}
-Le framework Gstreamer offre plusieurs types d'éléments, ou "plugins", afin d'effectuer des taches différentes. Gstreamer fourni plus de 200 plugins différent. Ainsi ils permettent :
-\begin{itemize}[label=$\bullet$]
+Le framework Gstreamer offre plusieurs types d'éléments, ou "plugins", afin d'effectuer des tâches différentes. Gstreamer fourni plus de 200 plugins diffèrent. Ainsi ils permettent :\begin{itemize}[label=$\bullet$]
  \item la manipulation d’objet multimédia
  \item gestions des entrées audio/vidéo (caméra/flux réseau)
  \item gestion des protocoles réseaux
@@ -41,18 +37,15 @@ Le framework Gstreamer offre plusieurs types d'éléments, ou "plugins", afin d'
  \item gestion des sorties
 \end{itemize}
 
-Lors de ce stage, j'ai particulierement travailler avec deux types d'élément, les multipléxeurs (ou "muxers") et les démultipléxeurs (ou " demuxers"). Les muxers sont de élement "N-to-1" qui prennent N flux en entrée puis les "entrelace" en un seul. Particulierement utiles lorsque l'on voudra muxer le flux vidéo avec la métadonnée.
-Les démuxers font l'exact inverse, ainsi, ils prennent un flux "entrelacé" puis en fourni N.
-
+Lors de ce stage, j'ai particulièrement travaillé avec deux types d'élément, les multiplexeurs (ou "muxers") et les démultiplexeurs (ou " demuxers"). Les muxers sont d'élement "N-to-1" qui prennent N flux en entrée puis les "entrelace" en un seul. Particulièrement utiles lorsque l'on voudra muxer le flux vidéo avec la métadonnée.Les démuxers font l'exact inverse, ainsi, ils prennent un flux "entrelacé" puis en fournir N.
 
 
 \subsubsection{3.2.1.2 Débogage}
-GStreamer possède des outils de débogage très utiles qui m'ont servis tout au long du stage. Le premier est GST\_DEBUG. Il s'agit d'une variable d’environnement qui peut être initialisé avec une valeur de 1 à 9 permettant d'afficher plus ou moins d'informations sur le déroulement des actions initiées par GStreamer.
-L'autre outils est un générateur de fichier *.dot permettant de générer une représentation graphique de la pipeline. Cela permet de vérifier que la pipeline obtenue par le programme est bien celle souhaitée lors de la conception et permet repérer simplement et rapidement certaines erreurs
+GStreamer possède des outils de débogage très utiles qui m'ont servi tout au long du stage. Le premier est GST\_DEBUG. Il s'agit d'une variable d’environnement qui peut-être initialisé avec une valeur de 1 à 9 permettant d'afficher plus ou moins d'informations sur le déroulement des actions initiées par GStreamer.L'autre outil est un générateur de fichier *. dot permettant de générer une représentation graphique de du pipeline. Cela permet de vérifier que le pipeline obtenu par le programme est bien celle souhaitée lors de la conception et permet de repérer simplement et rapidement certaines erreurs
 
 
 \section{OpenCV}
-Le projet contient des briques algorithmiques fonctionnant grâce à la bibliothèque OpenCV. OpenCV (pour Open Computer Vision) est une bibliothèque graphique libre, initialement développée par Intel, spécialisée dans le traitement d'images en temps réel. La société de robotique Willow Garage et la société ItSeez se sont succédé au support de cette bibliothèque, Depuis 2016 et le rachat de ItSeez par Intel, le support est de nouveau assuré par Intel.
+Le projet contient des briques algorithmiques fonctionnant grâce à la bibliothèque OpenCV. OpenCV (pour open computer Vision) est une bibliothèque graphique libre, initialement développée par Intel, spécialisée dans le traitement d'images en temps réel. La société de robotique Willow Garage et la société ItSeez se sont succédé au support de cette bibliothèque, Depuis 2016 et le rachat d'ItSeez par Intel, le support est de nouveau assuré par Intel.
 
 
 \section{Protobuf }
@@ -80,21 +73,15 @@ Protobuf ou "Protocol Buffers" sont un mécanisme flexible, efficace et automati
 }
 \end{lstlisting}
 
-C'est à l'aide de cet technologie que nous formattons les métadonnées générer par les algorithmes de traitement d'images afin de les "muxer" avec le flux vidéo.
+C'est à l'aide de cette technique que nous formattons les métadonnées générées par les algorithmes de traitement d'images afin de les "muxer" avec le flux vidéo.
 
 \section{Outils de provisionnement}
 
 \subsection{Vagrant}
-Vagrant est un outil de création et de gestion d'environnements de machines virtuelles. Il est un outil qui permet de démarrer des machines virtuelles avec une configuration donnée. Un très bon moyen de mettre au point et de diffuser des environnements de travail, et ce, de manière reproductible. Vagrant permet donc d'éviter le syndrome « works on my machine ».
-Plusieurs cas d'usages sont possibles. Le plus courant est celui de faire démarrer un développeur "from scratch" (à partir de zéros). Ensuite, à partir d'un VagrantFile\footnote{fichier de configuration de vagrant.} , il suffit de saisir vagrant up et on dispose d'un environnement de développement.
+Vagrant est un outil de création et de gestion d'environnements de machines virtuelles. Il est un outil qui permet de démarrer des machines virtuelles avec une configuration donnée. Un très bon moyen de mettre au point et de diffuser des environnements de travail, et ce, de manière reproductible. Vagrant permet donc d'éviter le syndrome « works on my machine ».Plusieurs cas d'usage sont possibles. Le plus courant est celui de faire démarrer un développeur "from scratch" (à partir de zéros). Ensuite, à partir d'un VagrantFile\footnote{fichier de configuration de vagrant.} il suffit de saisir vagrant up et on dispose d'un environnement de développement.
 
 \subsection{Ansible}
-Écrit en Python, Ansible est un outil Open Source qui permet l’automatisation de tâches. Grâce à lui, nous gérons vos configurations de VM plus facilement, et de façon automatique grâce à l’exécution de tâches sur des groupes d’hôtes.
-Il n’utilise pas de client, d’agent, sur les hôtes clients mais nécessite uniquement une partie serveur Ansible, forcément sous Linux.
-Par ailleurs, Ansible peut éventuellement être utilisé à des fins de contrôle, par exemple pour s’assurer que certains services soient exécutés sur un groupe de machine.
-Sachant qu’il est possible de développer ses propres tâches grâce aux langages YAML, vous pourrez dompter vos serveurs comme bon vous semble avec Ansible !
-
-
+Écrit en Python, Ansible est un outil Open Source qui permet l’automatisation de tâches. Grâce à lui, nous gérons vos configurations de VM plus facilement, et de façon automatique grâce à l’exécution de taches sur des groupes d’hôtes.Il n’utilise pas de client, d’agent, sur les hôtes clients mais nécessite uniquement une partie serveur Ansible, forcément sous Linux.Par ailleurs, Ansible peut éventuellement être utilisé à des fins de contrôle, par exemple pour s’assurer que certains services soient exécutés sur un groupe de machine.Sachant qu’il est possible de développer ses propres tâches grâce aux langages YAML, vous pourrez dompter vos serveurs comme bon vous semble avec Ansible !
 
 
 
