@@ -1,0 +1,97 @@
+\documentclass[a4paper,12pt,final]{article}
+\usepackage{natbib}         % Pour la bibliographie
+\usepackage{url}            % Pour citer les adresses web
+\usepackage[T1]{fontenc}    % Encodage des accents
+\usepackage[utf8]{inputenc} % Lui aussi
+\usepackage[french]{babel} % Pour la traduction française
+\usepackage{numprint}       % Histoire que les chiffres soient bien
+\usepackage{fancyhdr}
+
+\usepackage{amsmath}        % La base pour les maths
+\usepackage{mathrsfs}       % Quelques symboles supplémentaires
+\usepackage{amssymb}        % encore des symboles.
+\usepackage{amsfonts}       % Des fontes, eg pour \mathbb.
+\usepackage{setspace}
+\usepackage[svgnames]{xcolor} % De la couleur
+\usepackage{geometry}       % Gérer correctement la taille
+
+%%% Si jamais vous voulez changer de police: décommentez les trois
+%\usepackage{tgpagella}
+%\usepackage{tgadventor}
+%\usepackage{inconsolata}
+
+
+\usepackage{graphicx} % inclusion des graphiques
+\usepackage{wrapfig}  % Dessins dans le texte.
+
+\usepackage{tikz}     % Un package pour les dessins (utilisé pour l'environnement {code})
+\usepackage[framemethod=TikZ]{mdframed}
+% Un environnement pour bien présenter le code informatique
+\newenvironment{code}{%
+\begin{mdframed}[linecolor=Green,innerrightmargin=30pt,innerleftmargin=30pt,
+backgroundcolor=Black!5,
+skipabove=10pt,skipbelow=10pt,roundcorner=5pt,
+splitbottomskip=6pt,splittopskip=12pt]
+}{%
+\end{mdframed}
+}
+
+%\setmarginsrb{3 cm}{2.5 cm}{3 cm}{2.5 cm}{1 cm}{1.5 cm}{1 cm}{1.5 cm}
+\graphicspath{{figures/}}
+
+\title{Rapport de Stage Master 2}
+\author{ABAK-KALI Nizar}
+\date{\today}
+
+\newcommand{\reporttitle}{Rapport de stage M2}
+\newcommand{\reportauthora}{Nizar ABAK-KALI {11290569}} % Auteur
+\newcommand{\reportsubject}{Rapport de stage Master 1} % Sujet
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\setlength{\parskip}{1ex} % Espace entre les paragraphes
+\makeatletter
+\let\thetitle\@title
+\let\theauthor\@author
+\let\thedate\@date
+\makeatother
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\theauthor}
+\lhead{\thetitle}
+\cfoot{\thepage}
+\lfoot{
+  \includegraphics [width=20mm]{figures/logop8.jpg}
+  }
+\rfoot{
+  \includegraphics [width=30mm]{figures/logo_Smile.png}
+}
+%\renewcommand{\footrulewidth}{1pt}
+
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\include{content/title}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\tableofcontents
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\listoffigures
+\pagebreak
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\include{content/remerciement}
+
+\include{content/intro}
+
+\include{content/pres_entreprise}
+\newpage
+\include{content/sujet}
+\newpage
+\include{content/env_travail}
+\newpage
+\include{content/travail_effectuer}
+\newpage
+\include{content/bilan}
+\newpage
+\include{content/ref}
+
+\end{document}

@@ -12,8 +12,7 @@ GStreamer est un framework multimédia sous licence libre publié pour la premi�
 
 
 \subsection{Principes techniques}
-\label{principe_gst}
-GStreamer est basé sur un système de pipeline. Différents éléments sont connectés entre eux par des tuyaux (pipe). Chaque élément possède des "pads" servant à les connecter aux autres. Ces pads peuvent être soit des entrées (sink) soit des sorties (source).
+GStreamer est basé sur un système de pipeline. Différents éléments sont connectés entre eux par des tuyaux (pipe). Chaque élément possède des « pad » servant à les connecter aux autres. Ces pads peuvent être soit des entrées (sink) soit des sorties (source).
 Exemple de pipeline GStreamer :
 Cette pipeline lit un fichier *.ogg, en sépare les pistes et décode sa piste audio et la décode pour ensuite la jouer.
 

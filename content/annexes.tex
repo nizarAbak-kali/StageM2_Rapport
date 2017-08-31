@@ -1,0 +1,66 @@
+\appendix
+\chapter{Shell d'installation de Gstreamer}
+
+\label{shell_installation_gstreamer}
+\url{https://gist.github.com/nizarAbak-kali/e0e2166b8d363391e79424fa2bebd4a3}
+
+\chapter{Header tsmux.h : énumeration des differents type d'élement stream}
+\begin{lstlisting}[language=C, caption=extrait du header tsmux.h enumerant les differents types connues,label=tsmux_h]
+/* Stream type assignments
+ *
+ *   0x00    ITU-T | ISO/IEC Reserved
+ *   0x01    ISO/IEC 11172 Video
+ *   0x02    ITU-T Rec. H.262 | ISO/IEC 13818-2 Video or
+ *           ISO/IEC 11172-2 constrained parameter video
+ *           stream
+ *   0x03    ISO/IEC 11172 Audio
+ *   0x04    ISO/IEC 13818-3 Audio
+ *   0x05    ITU-T Rec. H.222.0 | ISO/IEC 13818-1
+ *           private_sections
+ *   0x06    ITU-T Rec. H.222.0 | ISO/IEC 13818-1 PES
+ *           packets containing private data
+ *   0x07    ISO/IEC 13522 MHEG
+ *   0x08    ITU-T Rec. H.222.0 | ISO/IEC 13818-1 Annex A
+ *           DSM CC
+ *   0x09    ITU-T Rec. H.222.1
+ *   0x0A    ISO/IEC 13818-6 type A
+ *   0x0B    ISO/IEC 13818-6 type B
+ *   0x0C    ISO/IEC 13818-6 type C
+ *   0x0D    ISO/IEC 13818-6 type D
+ *   0x0E    ISO/IEC 13818-1 auxiliary
+ * 0x0F-0x7F ITU-T Rec. H.222.0 | ISO/IEC 13818-1 Reserved
+ * 0x80-0xFF User Private
+ */
+enum TsMuxStreamType {
+  TSMUX_ST_RESERVED                   = 0x00,
+  TSMUX_ST_VIDEO_MPEG1                = 0x01,
+  TSMUX_ST_VIDEO_MPEG2                = 0x02,
+  TSMUX_ST_AUDIO_MPEG1                = 0x03,
+  TSMUX_ST_AUDIO_MPEG2                = 0x04,
+  TSMUX_ST_PRIVATE_SECTIONS           = 0x05,
+  TSMUX_ST_PRIVATE_DATA               = 0x06,
+  TSMUX_ST_MHEG                       = 0x07,
+  TSMUX_ST_DSMCC                      = 0x08,
+  TSMUX_ST_H222_1                     = 0x09,
+
+  /* later extensions */
+  TSMUX_ST_AUDIO_AAC                  = 0x0f,
+  TSMUX_ST_VIDEO_MPEG4                = 0x10,
+  TSMUX_ST_VIDEO_H264                 = 0x1b,
+  TSMUX_ST_VIDEO_HEVC                 = 0x24,
+  TSMUX_ST_VIDEO_JP2K = 0x21,
+
+  /* private stream types */
+  TSMUX_ST_PS_AUDIO_AC3               = 0x81,
+  TSMUX_ST_PS_AUDIO_DTS               = 0x8a,
+  TSMUX_ST_PS_AUDIO_LPCM              = 0x8b,
+  TSMUX_ST_PS_DVB_SUBPICTURE          = 0x8c,
+  TSMUX_ST_PS_TELETEXT                = 0x8d,
+  TSMUX_ST_PS_KLV                     = 0x8e,    /* only used internally */
+  TSMUX_ST_PS_OPUS                    = 0x8f,    /* only used internally */
+  TSMUX_ST_PS_DVD_SUBPICTURE          = 0xff,
+
+  /* Non-standard definitions */
+  TSMUX_ST_VIDEO_DIRAC                = 0xD1
+};
+\end{lstlisting}

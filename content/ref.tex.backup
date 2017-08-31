@@ -1,0 +1,64 @@
+\chapter{Bibliographie}
+
+\begin{description}
+\item [How To Install and Use PostgreSQL on Ubuntu 16.04 DigitalOcean] \url{https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-16-04} .
+\item [GStreamer-1.8.1 rtsp server and client on ubuntu Telecom R \& D] \url{https://telecom.altanai.com/2016/05/20/gstreamer-1-8-1-rtsp-server-and-client-on-ubuntu/} .
+\item [gstreamer - Plugins: "ugly" and "bad" - Ask Ubuntu] \url{https://askubuntu.com/questions/468875/plugins-ugly-and-bad} .
+\item [grpc] \url{http://www.grpc.io/docs/quickstart/cpp.html} .
+\item [grpc] \url{http://www.grpc.io/docs/quickstart/python.html} .
+\item [Projects · Dashboard · GitLab] \url{https://gitlab.openwide.fr/} .
+\item [gst-plugins-base/gst-libs at master · GStreamer/gst-plugins-base · GitHub] \url{https://github.com/GStreamer/gst-plugins-base/tree/master/gst-libs} .
+\item [Installing OpenCV 2.4.9 in Ubuntu 14.04 LTS – Sebastian Montabone] \url{http://www.samontab.com/web/2014/06/installing-opencv-2-4-9-in-ubuntu-14-04-lts/} .
+\item [Installing OpenCV on Debian Linux | Indranil's world] \url{https://indranilsinharoy.com/2012/11/01/installing-opencv-on-linux/} .
+\item [grpc/INSTALL.md at master · grpc/grpc · GitHub] \url{https://github.com/grpc/grpc/blob/master/INSTALL.md} .
+\item [Gstreamer basic real time streaming tutorial | Einar Sundgren] \url{http://www.einarsundgren.se/gstreamer-basic-real-time-streaming-tutorial/} .
+\item [GStreamer Debugging - RidgeRun Developer Connection] \url{https://developer.ridgerun.com/wiki/index.php/GStreamer_Debugging#Use_standard_GStreamer_debug_output_with_filter} .
+\item [manual.pdf] \url{https://gstreamer.freedesktop.org/data/doc/gstreamer/head/manual/manual.pdf} .
+\item [open-wide / sisellbox-ng · GitLab] \url{https://gitlab.openwide.fr/open-wide/sisellbox-ng} .
+\item [Accueil - Smile Intranet] \url{https://intranet.smile.fr/portal/fr/web/guest/home} .
+\item [Webmail - BlueMind] \url{https://bluemind.smile.fr/webmail/?_task=mail&_mbox=INBOX&_refresh=1} .
+\item [Vim as a Python IDE | Unlogic] \url{http://unlogic.co.uk/2013/02/08/vim-as-a-python-ide/} .
+\item [Real Time Streaming Protocol - Wikipedia] \url{https://en.wikipedia.org/wiki/Real_Time_Streaming_Protocol} .
+\item [toto.html] \url{file:///home/niaba/Documents/sisellbox-ng/doc/architecture/toto.html} .
+\item [Troubleshooting GStreamer] \url{https://gstreamer.freedesktop.org/documentation/frequently-asked-questions/troubleshooting.html} .
+\item [Gstreamer cheat sheet - MyLabWiki] \url{http://wiki.oz9aec.net/index.php/Gstreamer_Cheat_Sheet} .
+\item [pygst-tutorial.pdf] \url{https://brettviren.github.io/pygst-tutorial-org/pygst-tutorial.pdf} .
+\item [Instantiable classed types: objects: GObject Reference Manual] \url{https://developer.gnome.org/gobject/stable/gtype-instantiable-classed.html} .
+\item [GObject Reference Manual: GObject Reference Manual] \url{https://developer.gnome.org/gobject/stable/} .
+\item [Mpeg TS helper library: GStreamer Bad Plugins 1.0 Library Reference Manual] \url{https://gstreamer.freedesktop.org/data/doc/gstreamer/head/gst-plugins-bad-libs/html/mpegts.html} .
+\item [gst-plugins-bad/gst-libs/gst/mpegts at master · GStreamer/gst-plugins-bad] \url{https://github.com/GStreamer/gst-plugins-bad/tree/master/gst-libs/gst/mpegts} .
+\item [Diapo : ces bricolages de génie qui donnent envie d'acheter un Raspberry Pi] \url{http://www.tomshardware.fr/articles/raspberry-pi-bestof-bricolage-hack,1-63056.html} .
+\item [MPEG transport stream - Wikipedia] \url{https://en.wikipedia.org/wiki/MPEG_transport_stream#PCR} .
+\item [Novacut/GStreamer1.0 - Ubuntu Wiki] \url{https://wiki.ubuntu.com/Novacut/GStreamer1.0} .
+\item [rubenrua/GstreamerCodeSnippets: Gstreamer Code Snippets in C, Python and Shell (gst-launch).] \url{https://github.com/rubenrua/GstreamerCodeSnippets} .
+\item [Adding Properties] \url{https://gstreamer.freedesktop.org/documentation/plugin-development/basics/args.html} .
+\item [Example GStreamer Pipelines - IGEP Community Wiki] \url{http://labs.isee.biz/index.php/Example_GStreamer_Pipelines} .
+\item [Base MPEG-TS descriptors: GStreamer Bad Plugins 1.0 Library Reference Manual] \url{https://gstreamer.freedesktop.org/data/doc/gstreamer/head/gst-plugins-bad-libs/html/gst-plugins-bad-libs-Base-MPEG-TS-descriptors.html} .
+\item [Creating special element types] \url{https://gstreamer.freedesktop.org/documentation/plugin-development/element-types/index.html} .
+\item [GStreamer and in-band metadata - RidgeRun Developer Connection] \url{https://developer.ridgerun.com/wiki/index.php/GStreamer_and_in-band_metadata} .
+\item [Novacut/GStreamer1.0 - Ubuntu Wiki] \url{https://wiki.ubuntu.com/Novacut/GStreamer1.0#audio.2Fx-raw.2C_video.2Fx-raw} .
+\item [cerbero-docs/start.md at master · centricular/cerbero-docs] \url{https://github.com/centricular/cerbero-docs/blob/master/start.md} .
+\item [centricular/cerbero: GStreamer's Cerbero forked to add Meson and MSVC support] \url{https://github.com/centricular/cerbero} .
+\item [GstPlugin: GStreamer 1.0 Core Reference Manual] \url{https://gstreamer.freedesktop.org/data/doc/gstreamer/head/gstreamer/html/GstPlugin.html} .
+\item [YBlog - Learn Vim Progressively] \url{http://yannesposito.com/Scratch/en/blog/Learn-Vim-Progressively/} .
+\item [The Basics of Writing a Plugin] \url{https://gstreamer.freedesktop.org/documentation/plugin-development/basics/index.html} .
+\item [Things to check when writing an element] \url{https://gstreamer.freedesktop.org/documentation/plugin-development/appendix/checklist-element.html} .
+\item [Shared Libraries] \url{http://tldp.org/HOWTO/Program-Library-HOWTO/shared-libraries.html} .
+\item [Install Qt 5 on Ubuntu - Qt Wiki] \url{https://wiki.qt.io/Install_Qt_5_on_Ubuntu} .
+\item [Vim Awesome] \url{http://vimawesome.com/} .
+\item [Base MPEG-TS descriptors: GStreamer Bad Plugins 1.0 Library Reference Manual] \url{https://gstreamer.freedesktop.org/data/doc/gstreamer/head/gst-plugins-bad-libs/html/gst-plugins-bad-libs-Base-MPEG-TS-descriptors.html#GstMpegtsDescriptor-struct} .
+\item [Base MPEG-TS sections: GStreamer Bad Plugins 1.0 Library Reference Manual] \url{https://gstreamer.freedesktop.org/data/doc/gstreamer/head/gst-plugins-bad-libs/html/gst-plugins-bad-libs-Base-MPEG-TS-sections.html} .
+\item [MPEG-2 TS Overview] \url{http://cmm.khu.ac.kr/korean/files/02.mpeg2ts1_es_pes_ps_ts_psi.pdf} .
+\item [Packetized elementary stream - Wikipedia] \url{https://en.wikipedia.org/wiki/Packetized_elementary_stream} .
+\item [GStreamer-devel - Gstreamer-1.0 blacklisted entries] \url{http://gstreamer-devel.966125.n4.nabble.com/Gstreamer-1-0-blacklisted-entries-td4671087.html} .
+\item [DevDocs — Offline] \url{https://devdocs.io/offline} .
+\item [Example GStreamer Pipelines - Texas Instruments Wiki] \url{http://processors.wiki.ti.com/index.php/Example_GStreamer_Pipelines} .
+\item [GStreamer Debugging - RidgeRun Developer Connection] \url{https://developer.ridgerun.com/wiki/index.php/GStreamer_Debugging} .
+\item [gst-launch-1.0] \url{https://gstreamer.freedesktop.org/documentation/tools/gst-launch.html#environment-variables} .
+\item [Basic tutorial 11: Debugging tools] \url{https://gstreamer.freedesktop.org/documentation/tutorials/basic/debugging-tools.html#the-debug-log} .
+\item [Sisselbox | Trello] \url{https://trello.com/b/2O788DTs/sisselbox} .
+\item [GStreamer Typefinding and Dynamic Pipelines - Part 2 · pyVision] \url{https://pi19404.github.io/pyVision//2014/12/17/21/} .
+\item [OpenVPN < Systeme/ConfigPostes < Foswiki] \url{https://wiki.smile.fr/view/Systeme/ConfigPostes/OpenVPN#Installation_client_Linux_40Debian_45_Ubuntu_41} .
+\item [Good patching practice] \url{http://en.tldp.org/HOWTO/Software-Release-Practice-HOWTO/patching.html} .
+\item [7 Patch Command Examples to Apply Diff Patch Files in Linux] \url{http://www.thegeekstuff.com/2014/12/patch-command-examples} .
+\end{description}
